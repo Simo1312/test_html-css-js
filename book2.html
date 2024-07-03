@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Как да печелим на хазарт в Интернет</title>
+    <style>
+	    h1 {text-align: center;}
+		h2 {text-align: center;}
+        p {text-align: center;}
+		form {text-align: center;}
+		img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+            }
+        body {
+            font-family: Arial, sans-serif;
+        }
+		div {
+         background-color: #f5dfb8;
+         width: 500px;
+         border: 2px black;
+         padding: 50px;
+         margin: auto;
+		 ;
+        }
+    </style>
+</head>
+<body style="background-color:#e8cb95;" >
+    <h1>Как да печелим на хазарт в Интернет</h1>
+    <img src="gamba.jpg" alt="Книга 1">
+	<p>Автор: Белинда Левес</p>
+    <p>Интернет, Компютри и интернет, Книги</p>
+    <div>Милиони хора играят на хазарт в Интернет. Някои печелят, други губят. Когато прочетете тази книга ще разберете защо е така.
+Ще можете да анализирате шансовете си за печалба при различни игри и да правите сигурно залозите си.
+Ще сте в състояние да разработвате стратегии, да избягвате капаните на букмейкърите и да залагате свои. В крайна сметка няма да се налага да разчитате на късмет, а на нови знания и умения, с помощта на които да печелите.</div>
+    <p>Цена: 8 лв.</p>
+
+    <h2>Закупуване на книгата</h2>
+    <form id="purchase-form" action="#" method="post">
+        <label for="name">Име:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="address">Адрес:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <input type="submit" value="Купи">
+    </form>
+    <p id="purchase-message" style="color:green; text-align:center;"></p>
+
+    <h2>Потребителски ревюта</h2>
+    <div id="reviews-container" style="text-align:center;">
+        <p class="review">Много хубав продукт!</p>
+    </div>
+
+    <h2>Напиши ревю</h2>
+    <form id="review-form" action="#" method="post">
+        <label for="review">Коментар:</label><br>
+        <textarea id="review" name="review"></textarea><br>
+        <input type="submit" value="Изпрати">
+    </form>
+
+    <script>
+        
+        document.getElementById('purchase-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            document.getElementById('purchase-message').textContent = name + ', благодарим за поръчката!';
+        });
+
+       
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var comment = document.getElementById('review').value;
+            var reviewsContainer = document.getElementById('reviews-container');
+            var newReview = document.createElement('p');
+            newReview.className = 'review';
+            newReview.textContent = comment;
+            reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+            document.getElementById('review-form').reset();
+        });
+    </script>
+</body>
+</html>
+
+
+
+

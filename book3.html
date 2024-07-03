@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Животът е вкусен с Ути Бъчваров</title>
+    <style>
+	    h1 {text-align: center;}
+		h2 {text-align: center;}
+        p {text-align: center;}
+		form {text-align: center;}
+		img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+            }
+        body {
+            font-family: Arial, sans-serif;
+        }
+		div {
+         background-color: #f5dfb8;
+         width: 500px;
+         border: 2px black;
+         padding: 50px;
+         margin: auto;
+		 ;
+        }
+    </style>
+</head>
+<body style="background-color:#e8cb95;" >
+    <h1>Животът е вкусен с Ути Бъчваров</h1>
+    <img src="bachvarov.jpg" alt="Книга 1">
+	<p>Автор: Ути Бъчваров</p>
+    <p>Кухня. Хранене и готвене, Хоби и свободно време, Книги</p>
+    <div>Любимото ястие е храна за тялото и душата. Приготвянето на традиционна българска трапеза е емоция и за домакина, и за гостите. „Животът е вкусен с Ути Бъчваров и Fibank” е един проект, зад който Fibank (Първа инвестиционна банка) застана, вярна на традициите си да подкрепя българското.
+
+
+
+С книгата, която държите в ръцете си, ще отворите вратите на Вашия дом за рецептите и емоциите, които щастливи новодомци споделиха в национален ефир в предаването на Ути Бъчваров. Домашният уют, атмосферата, щастливото семейство и най-близките ни и любими хора са непреходните ценности в нашия живот, които са смисълът на ежедневието ни.
+
+
+
+Празнувайте, веселете се с близки и добавяйте по щипка любим вкус в живота си всеки ден!</div>
+    <p>Цена: 25 лв.</p>
+
+    <h2>Закупуване на книгата</h2>
+    <form id="purchase-form" action="#" method="post">
+        <label for="name">Име:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="address">Адрес:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <input type="submit" value="Купи">
+    </form>
+    <p id="purchase-message" style="color:green; text-align:center;"></p>
+
+    <h2>Потребителски ревюта</h2>
+    <div id="reviews-container" style="text-align:center;">
+        <p class="review">Много хубав продукт!</p>
+    </div>
+
+    <h2>Напиши ревю</h2>
+    <form id="review-form" action="#" method="post">
+        <label for="review">Коментар:</label><br>
+        <textarea id="review" name="review"></textarea><br>
+        <input type="submit" value="Изпрати">
+    </form>
+
+    <script>
+        
+        document.getElementById('purchase-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            document.getElementById('purchase-message').textContent = name + ', благодарим за поръчката!';
+        });
+
+       
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var comment = document.getElementById('review').value;
+            var reviewsContainer = document.getElementById('reviews-container');
+            var newReview = document.createElement('p');
+            newReview.className = 'review';
+            newReview.textContent = comment;
+            reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+            document.getElementById('review-form').reset();
+        });
+    </script>
+</body>
+</html>
+
+
+
+

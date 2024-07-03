@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Тайните на домашния майстор ракиджия (второ издание)</title>
+    <style>
+	    h1 {text-align: center;}
+		h2 {text-align: center;}
+        p {text-align: center;}
+		form {text-align: center;}
+		img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+            }
+        body {
+            font-family: Arial, sans-serif;
+        }
+		div {
+         background-color: #f5dfb8;
+         width: 500px;
+         border: 2px black;
+         padding: 50px;
+         margin: auto;
+		 ;
+        }
+    </style>
+</head>
+<body style="background-color:#e8cb95;" >
+    <h1>Тайните на домашния майстор ракиджия (второ издание)</h1>
+    <img src="rakiq.jpg" alt="Книга 1">
+	<p>Автор: Аламбик Първаков; Мускат Казанджиев</p>
+    <p>Хоби и свободно време, Книги</p>
+    <div>Ръководство за произвеждане на качествена домашна ракия<br>
+
+Нека просто да кажем, че няма човек, независимо дали е пълен новак, или най-опитният специалист по ракия, тази книга си заслужава. (Антон Петров)<br><br>
+
+С тази книга ще разширите знанията си за ракия и ще ви избави от всички онези въпросителвни (Стоян Колев)<br><br>
+
+Страхотна книга, особено за тези, които са нови в занаята на дистилацията на алкохол и специално ракия. (Тодор Иванов)<br><br>
+
+Чудесен подарък за всеки ракия ентусиаст. Наздраве... (Малин Карамитев)<br><br>
+
+Увлекателно и различно ръководство за варене на ракия (Стефан Борисов)</div>
+    <p>Цена: 18.90 лв.</p>
+
+    <h2>Закупуване на книгата</h2>
+    <form id="purchase-form" action="#" method="post">
+        <label for="name">Име:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="address">Адрес:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <input type="submit" value="Купи">
+    </form>
+    <p id="purchase-message" style="color:green; text-align:center;"></p>
+
+    <h2>Потребителски ревюта</h2>
+    <div id="reviews-container" style="text-align:center;">
+        <p class="review">Много хубав продукт!</p>
+    </div>
+
+    <h2>Напиши ревю</h2>
+    <form id="review-form" action="#" method="post">
+        <label for="review">Коментар:</label><br>
+        <textarea id="review" name="review"></textarea><br>
+        <input type="submit" value="Изпрати">
+    </form>
+
+    <script>
+        
+        document.getElementById('purchase-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            document.getElementById('purchase-message').textContent = name + ', благодарим за поръчката!';
+        });
+
+       
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var comment = document.getElementById('review').value;
+            var reviewsContainer = document.getElementById('reviews-container');
+            var newReview = document.createElement('p');
+            newReview.className = 'review';
+            newReview.textContent = comment;
+            reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+            document.getElementById('review-form').reset();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
